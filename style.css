@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding:0;
 }
+
 a{
     color:black;
     text-decoration: none;
@@ -15,6 +16,11 @@ a{
     cursor: pointer; 
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
 
 /* header */
 .header{
@@ -119,8 +125,6 @@ p {
 }
 
 
-
-
 /* content */
 .container{
     display: flex;
@@ -144,12 +148,14 @@ p {
     font-size: 28px;
 }
 
+
 .content_left{
     opacity: 0;
     width:50%;
     float:left;
     padding-left:100px;
 
+    position: sticky;
 }
 
 .content_right{
@@ -188,11 +194,10 @@ footer{
 }
 
 
-
-
 .img_profile{
     width:60%;
 }
+
 .img_3d{
     width:80%;
     padding:10px;
@@ -236,11 +241,9 @@ footer{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
     font-size: 28px;
-    
 }
 
 .item_work2{
     background-color: blue;
-
 }
 
