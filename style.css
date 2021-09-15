@@ -64,7 +64,7 @@ a{
 /* intro */
 .intro-img{
     position: relative;
-    background-image: url(./intro_background.jpg);
+    background-image: url(./img/intro_background.jpg);
     height: 100vh;
     background-size: cover;
     margin-bottom:300px;

@@ -63,7 +63,7 @@ $(document).ready(function() {
     });
 });
 
-//스크롤함에따라 콘텐츠 생성
+//스크롤함에따라 콘텐츠 생성(margin)
 $(document).ready(function() {
   $(window).scroll( function(){
       $('.content_right').each( function(i){
