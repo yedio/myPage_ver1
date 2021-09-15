@@ -15,6 +15,7 @@ a{
     cursor: pointer; 
 }
 
+
 /* header */
 .header{
     display:flex;
@@ -73,9 +74,10 @@ a{
     display: flex;
     flex-direction: column;
     color: white;
-    width: 45%;
-    padding-top:10%;
-    margin-left: 50px;
+    align-items: center;
+    text-align:center;
+    left: 50%;
+    padding-top:14%;
     font-family: "Roboto", sans-serif;
 }
 
@@ -143,6 +145,7 @@ p {
 }
 
 .content_left{
+    opacity: 0;
     width:50%;
     float:left;
     padding-left:100px;
@@ -150,6 +153,8 @@ p {
 }
 
 .content_right{
+    margin-right:-500px;
+    max-width:100%;
     width:50%;
     float:right;
     display: flex;
