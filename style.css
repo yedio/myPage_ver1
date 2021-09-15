@@ -8,15 +8,14 @@ a{
     text-decoration: none;
 }
 
-
-.intro-img{
-    position: relative;
-    background-image: url(./intro_background.jpg);
-    height: 100vh;
-    background-size: cover;
-    margin-bottom:300px;
+.top-button { 
+    position: fixed; 
+    bottom: 1rem; 
+    right: 1rem; 
+    cursor: pointer; 
 }
 
+/* header */
 .header{
     display:flex;
     justify-content: space-between;
@@ -30,6 +29,7 @@ a{
     transition: background-color 300ms ease-in-out;
     font-family: 'Changa', sans-serif;
 }
+
 .header a{
     color:white;
 }
@@ -41,7 +41,6 @@ a{
 .right-menu{
     width:10%;
 }
-
 
 .logo-menu{
     top: 15px;
@@ -61,7 +60,66 @@ a{
     letter-spacing: 1px;
 }
 
+/* intro */
+.intro-img{
+    position: relative;
+    background-image: url(./intro_background.jpg);
+    height: 100vh;
+    background-size: cover;
+    margin-bottom:300px;
+}
 
+.intro-desc {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 45%;
+    padding-top:10%;
+    margin-left: 50px;
+    font-family: "Roboto", sans-serif;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.title-large {
+    font-size: 58px;
+    margin-bottom: 15px;
+    margin-top:05px;
+    letter-spacing: 1.2px;
+    width: 430px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    padding: 15px 20px;
+    background-color: #fff;
+    color: black;
+    transition: opacity 200ms ease-in-out;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: max-content;
+}
+
+
+
+
+/* content */
 .container{
     display: flex;
     flex-direction: column;
