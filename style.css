@@ -25,7 +25,7 @@ a{
     height:70px;
     width: 100%;
     position:fixed;
-   //border-bottom: 1px solid #E6EAEA;
+   /* -bottom: 1px solid #E6EAEA; */
     z-index: 9999;
     transition: background-color 300ms ease-in-out;
     font-family: 'Changa', sans-serif;
