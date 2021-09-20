@@ -45,6 +45,8 @@ $(document).ready(function($) {
   });
 });
 
+
+/*
 //스크롤함에따라 콘텐츠 생성
 
 $(document).ready(function() {
@@ -78,3 +80,20 @@ $(document).ready(function() {
       }); 
   });
 });
+
+*/
+var left = document.getElementById("left");
+var stop = (left.offsetTop - 180);
+
+window.onscroll = function (e) {
+    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    console.log(scrollTop, left.offsetTop);
+    //left.offsetTop;
+
+    if (scrollTop >= stop) {
+        left.className = 'stick';
+    } else {
+        left.className = '';
+    }
+
+}
