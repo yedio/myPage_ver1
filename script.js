@@ -1,21 +1,10 @@
 
-//스크롤 값 console
-document.addEventListener('scroll', function() {
-  var currentScrollValue = document.documentElement.scrollTop;
-  console.log('currentScrollValue is ' + currentScrollValue);
-});
+// //스크롤 값 console
+// document.addEventListener('scroll', function() {
+//   var currentScrollValue = document.documentElement.scrollTop;
+//   console.log('currentScrollValue is ' + currentScrollValue);
+// });
 
-
-
-//헤더 스타일 변경
-const header = document.querySelector(".header");
-window.addEventListener("scroll", () => {
-  if (pageYOffset !== 0) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
 
 
 /* jQuery */
@@ -48,7 +37,7 @@ $(document).ready(function($) {
 });
 */
 
-
+/*
 //스크롤함에따라 콘텐츠 생성
 
 $(document).ready(function() {
@@ -66,7 +55,7 @@ $(document).ready(function() {
     });
 });
 
-/*
+
 //스크롤함에따라 콘텐츠 생성(margin)
 $(document).ready(function() {
   $(window).scroll( function(){
@@ -84,9 +73,13 @@ $(document).ready(function() {
 });
 
 */
+
+//sticky 
+
 var left = document.getElementById("left");
 var profile = document.getElementById("ITEM_PROFILE");
-var stop = (left.offsetTop-495);
+var stop = (left.offsetTop-500);
+
 
 window.onscroll = function (e) {
     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
@@ -100,5 +93,98 @@ window.onscroll = function (e) {
         left.className = '';
         profile.className = '';
     }
-
 }
+/*
+//스크롤 애니메이션
+const saTriggerMargin = 300;
+const saElementList = document.querySelectorAll('.sa');
+
+const saFunc = function() {
+for (const element of saElementList) {
+    if (!element.classList.contains('show')) {
+    if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+        element.classList.add('show');
+    }
+    }
+}
+}
+
+window.addEventListener('load', saFunc);
+window.addEventListener('scroll', saFunc);
+*/
+
+// $(document).ready(function() {
+//   $(window).scroll( function(){
+//       $('.item5').each( function(i){
+//           var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+//           var bottom_of_window = $(window).scrollTop() + $(window).height();
+//           if( bottom_of_window > bottom_of_object/5 ){
+//               $('.item5').animate({'opacity':'1'},500);
+//           }
+//       }); 
+//   });
+// });
+
+
+
+/*
+//선택자가 스크롤이 되었는지?
+$('#ITEM2').on('wheel', function() {
+  console.log("Scrolled!-2")
+  $('.text2').animate({'opacity':'100'},300);
+})
+$('#ITEM3').on('wheel', function() {
+  console.log("Scrolled!-3")
+  $('.text3').animate({'opacity':'100'},300);
+})
+
+*/
+
+
+
+function checkVisible( elm, eval ) {
+    eval = eval || "object visible";
+    var viewportHeight = $(window).height(), 
+        scrolltop = $(window).scrollTop(), 
+        y = $(elm).offset().top,
+        elementHeight = $(elm).height();   
+    
+    if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+    if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+}
+
+// var isVisible = false;
+// var isVisible3 = false;
+
+// $(window).on('scroll',function() {
+//   if (checkVisible($('#ITEM2'))&&!isVisible) {
+//       $('.text2').animate({'opacity':'100'},300);
+//       isVisible = true;
+//   }
+//   if (checkVisible($('#ITEM3'))&&!isVisible3) {
+//     $('.text3').animate({'opacity':'100'},300);
+//     isVisible3 = true;
+//   }
+// });
+
+let opaSpeed=1000;
+$(window).on('scroll',function() {
+  if (checkVisible($('#ITEM2'))) {
+    $('.text2').animate({'opacity':'100'},opaSpeed);
+  }
+  if (checkVisible($('#ITEM3'))) {
+    $('.text3').animate({'opacity':'100'},opaSpeed);
+  }
+  if (checkVisible($('#ITEM4'))) {
+    $('.text4').animate({'opacity':'100'},opaSpeed);
+  }
+  if (checkVisible($('#ITEM5'))) {
+    $('.text5').animate({'opacity':'100'},opaSpeed);
+  }
+  if (checkVisible($('#ITEM6'))) {
+    $('.text6').animate({'opacity':'100'},opaSpeed);
+    
+  }
+});
+
+

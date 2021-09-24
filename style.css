@@ -41,7 +41,7 @@ a{
     color:white;
 }
 
-.header.scrolled{
+.h-black{
     background-color: black;
 }
 
@@ -129,7 +129,7 @@ p {
 .container{
     display: flex;
     flex-direction:row;
-    margin:0px 200px;
+    margin:0px 150px;
 }
 
 .content_left{
@@ -144,10 +144,6 @@ p {
     margin:10px;
     margin-top:400px;
     height:500px;
-    /* display:flex;
-    align-items: center;
-    width:100%;
-    height:550px; */
 
     opacity: 0;
     font-family: 'Noto Sans KR', sans-serif;
@@ -158,8 +154,9 @@ p {
 #left.stick {
     position:fixed;
     top:0;
-    margin:400px 10px 10px 10px;
+    margin:300px 10px 10px 10px;
     opacity:100;
+    font-weight: 300;
 }
 
 .item-text{
@@ -167,9 +164,60 @@ p {
     flex-direction: column;
     align-items: center;
     text-align:center;
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: 300;
+    font-size: 25px;
+    opacity: 0;
 }
+
+.text-anim{
+    opacity: 0;
+    transition: all .5s ease;
+}
+.text-anim.show{
+    opacity: 1;
+    transform: none;  
+}
+
+/* Scroll Animation (sa, 스크롤 애니메이션) */
+
+/* 아래에서 위로 페이드 인 */
+.sa-up {
+transform: translate(0, 100px);
+}
+/* 위에서 아래로 페이드 인 */
+.sa-down {
+transform: translate(0, -100px);
+}
+/* 왼쪽에서 오른쪽으로 페이드 인 */
+.sa-right {
+transform: translate(-100px, 0);
+}
+/* 오른쪽에서 왼쪽으로 페이드 인 */
+.sa-left {
+transform: translate(100px, 0);
+}
+/* 왼쪽으로 회전하면서 페이드 인 */
+.sa-rotateL {
+transform: rotate(180deg);
+}
+/* 오른쪽으로 회전하면서 페이드 인 */
+.sa-rotateR {
+transform: rotate(-180deg);
+}
+/* 작아진 상태에서 커지면서 페이드 인 */
+.sa-scaleUp {
+transform: scale(.5);
+}
+/* 커진 상태에서 작아지면서 페이드 인 */
+.sa-scaleDown {
+transform: scale(1.5);
+}
+
+.text1{
+    opacity: 100;
+}
+
+
 
 .item{
     display:flex;
@@ -180,16 +228,17 @@ p {
     height:1500px;
     font-weight: 500;
     font-size: 28px;
-    border: #0f044d 1px solid;
+    /* border: #0f044d 1px solid; */
 }
 
 .item1{
     justify-content: center;
-    height: 1000px;
-    margin-bottom: 500px;
+    height: 800px;
+    margin-bottom: 700px;
 }
 
-
+.item5{
+}
 
 
 footer{
@@ -228,7 +277,9 @@ footer{
 .img_profile{
     width:60%;
 }
-
+.card{
+    width:80%;
+}
 .img_3d{
     width:80%;
     padding:10px;
@@ -247,34 +298,5 @@ footer{
     font-weight: bold;
     text-align: center;
     color: #0f044d;
-}
-
-
-/* work.css */
-
-.header_work{
-    display:flex;
-    justify-content: center;
-    align-items:  center;
-}
-
-.sub-name{
-    color:red;
-}
-
-.item_work{
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-    width:100%;
-    height:550px;
-    margin-bottom:400px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 500;
-    font-size: 28px;
-}
-
-.item_work2{
-    background-color: blue;
 }
 
