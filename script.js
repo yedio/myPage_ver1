@@ -1,8 +1,10 @@
+
 //스크롤 값 console
 document.addEventListener('scroll', function() {
   var currentScrollValue = document.documentElement.scrollTop;
   console.log('currentScrollValue is ' + currentScrollValue);
 });
+
 
 
 //헤더 스타일 변경
@@ -36,7 +38,7 @@ $(function() {
   });
 });
 
-
+/*
 //원하는 위치로 이동 
 $(document).ready(function($) {
   $("#START_BTN").click(function(event){
@@ -44,9 +46,9 @@ $(document).ready(function($) {
     $('html,body').animate({scrollTop:$(this.hash).offset().top- $(this.hash).height() / 2+50}, 500);
   });
 });
+*/
 
 
-/*
 //스크롤함에따라 콘텐츠 생성
 
 $(document).ready(function() {
@@ -59,12 +61,12 @@ $(document).ready(function() {
             
             if( bottom_of_window > bottom_of_element ){
                 $(this).animate({'opacity':'1'},2000);
-            }
-            
+            }           
         }); 
     });
 });
 
+/*
 //스크롤함에따라 콘텐츠 생성(margin)
 $(document).ready(function() {
   $(window).scroll( function(){
@@ -83,17 +85,20 @@ $(document).ready(function() {
 
 */
 var left = document.getElementById("left");
-var stop = (left.offsetTop - 180);
+var profile = document.getElementById("ITEM_PROFILE");
+var stop = (left.offsetTop-495);
 
 window.onscroll = function (e) {
     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    console.log(scrollTop, left.offsetTop);
+    //console.log(scrollTop,"offsetTop: "+left.offsetTop);
     //left.offsetTop;
 
     if (scrollTop >= stop) {
         left.className = 'stick';
+        profile.className = 'OPACITY';
     } else {
         left.className = '';
+        profile.className = '';
     }
 
 }
