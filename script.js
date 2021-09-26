@@ -83,7 +83,6 @@ var stop = (left.offsetTop-500);
 
 window.onscroll = function (e) {
     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    //console.log(scrollTop,"offsetTop: "+left.offsetTop);
     //left.offsetTop;
 
     if (scrollTop >= stop) {
@@ -224,3 +223,35 @@ $(window).on('scroll',function() {
     // document.getElementById("ITEM6").className = 'dark';
   }
 });
+
+
+/*Video
+
+const toggleFullscreenBtn = document.querySelector('.video1')
+const container = document.querySelector('.video1')
+
+toggleFullscreenBtn.addEventListener('click', e => {
+  toggleFullScreen(container)
+})
+
+function toggleFullScreen(element) {
+  if (!document.fullscreenElement) {
+    if (element.requestFullscreen) return element.requestFullscreen()
+    if (element.webkitRequestFullscreen)
+      return element.webkitRequestFullscreen()
+    if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+    if (element.msRequestFullscreen) return element.msRequestFullscreen()
+  } else {
+    if (document.exitFullscreen) return document.exitFullscreen()
+    if (document.webkitCancelFullscreen)
+      return document.webkitCancelFullscreen()
+    if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
+    if (document.msExitFullscreen) return document.msExitFullscreen()
+  }
+}
+
+function check(box){
+  if(box.checked==true) console.log("드라이브체크");
+  else console.log("드라이브체크X")
+}
+*/
