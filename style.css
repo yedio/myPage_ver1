@@ -9,6 +9,9 @@ a{
     text-decoration: none;
 }
 
+ul,li {
+    list-style:none;}
+
 .top-button { 
     position: fixed; 
     bottom: 1rem; 
@@ -178,40 +181,7 @@ p {
     transform: none;  
 }
 
-/* Scroll Animation (sa, 스크롤 애니메이션) */
 
-/* 아래에서 위로 페이드 인 */
-.sa-up {
-transform: translate(0, 100px);
-}
-/* 위에서 아래로 페이드 인 */
-.sa-down {
-transform: translate(0, -100px);
-}
-/* 왼쪽에서 오른쪽으로 페이드 인 */
-.sa-right {
-transform: translate(-100px, 0);
-}
-/* 오른쪽에서 왼쪽으로 페이드 인 */
-.sa-left {
-transform: translate(100px, 0);
-}
-/* 왼쪽으로 회전하면서 페이드 인 */
-.sa-rotateL {
-transform: rotate(180deg);
-}
-/* 오른쪽으로 회전하면서 페이드 인 */
-.sa-rotateR {
-transform: rotate(-180deg);
-}
-/* 작아진 상태에서 커지면서 페이드 인 */
-.sa-scaleUp {
-transform: scale(.5);
-}
-/* 커진 상태에서 작아지면서 페이드 인 */
-.sa-scaleDown {
-transform: scale(1.5);
-}
 
 .text1{
     opacity: 100;
@@ -237,32 +207,59 @@ transform: scale(1.5);
     margin-bottom: 700px;
 }
 
-.item5{
-}
-
-
-footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items:  center;
-    
-    height: 200px;
-    margin-bottom:300px;
-    font-size: 20px;
-}
 
 .contact{
-    font-family: 'Noto Sans KR', sans-serif;
-    letter-spacing: 1px;
-    font-size: 15px;
-    padding: 5px;
-}
-
-.contact.name{
-    font-family: 'Changa', sans-serif;
+    width:100%;
+    margin-top:95%;
+    margin-bottom: 50px;
     font-size: 40px;
 }
+
+.slide{
+    position: relative;
+    
+    margin:30px; 
+    padding:0;
+    
+    width:300px;
+    height:80px;
+    overflow:hidden;
+    
+}
+
+.back{
+    position: absolute;
+    padding-top:4%;
+    color:white;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(78, 78, 78);
+}
+
+.slide_after{
+    position: absolute;
+    padding-top:8%;
+    right: -300px;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    transition: 1s;
+    z-index:999;
+
+    font-size: 20px;
+    letter-spacing:2px ;
+}
+.slide_after a{
+    color:white;
+}
+
+.slide:hover .slide_after {
+    transition: 1s;
+    right: 0;
+}
+
+
 
 #ITEM_PROFILE{
     width:40%;

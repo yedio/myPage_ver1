@@ -142,6 +142,52 @@ $('#ITEM3').on('wheel', function() {
 
 
 
+
+
+// How long you want the animation to take, in ms
+const animationDuration = 2000;
+// Calculate how long each ‘frame’ should last if we want to update the animation 60 times per second
+const frameDuration = 1000 / 60;
+// Use that to calculate how many frames we need to complete the animation
+const totalFrames = Math.round( animationDuration / frameDuration );
+// An ease-out function that slows the count as it progresses
+const easeOutQuad = t => t * ( 2 - t );
+
+// The animation function, which takes an Element
+const animateCountUp = el => {
+  let frame = 0;
+  const countTo = parseInt( el.innerHTML, 10 );
+  // Start the animation running 60 times per second
+  const counter = setInterval( () => {
+    frame++;
+    // Calculate our progress as a value between 0 and 1
+    // Pass that value to our easing function to get our
+    // progress on a curve
+    const progress = easeOutQuad( frame / totalFrames );
+    // Use the progress value to calculate the current count
+    const currentCount = Math.round( countTo * progress );
+
+    // If the current count has changed, update the element
+    if ( parseInt( el.innerHTML, 10 ) !== currentCount ) {
+      el.innerHTML = currentCount;
+    }
+
+    // If we’ve reached our last frame, stop the animation
+    if ( frame === totalFrames ) {
+      clearInterval( counter );
+    }
+  }, frameDuration );
+};
+
+// Run the animation on all elements with a class of ‘countup’
+const countAnimations = () => {
+  const countupEls = document.querySelectorAll( '#COUNT_UP' );
+  countupEls.forEach( animateCountUp );
+};
+
+
+
+
 function checkVisible( elm, eval ) {
     eval = eval || "object visible";
     var viewportHeight = $(window).height(), 
@@ -153,24 +199,16 @@ function checkVisible( elm, eval ) {
     if (eval == "above") return ((y < (viewportHeight + scrolltop)));
 }
 
-// var isVisible = false;
-// var isVisible3 = false;
-
-// $(window).on('scroll',function() {
-//   if (checkVisible($('#ITEM2'))&&!isVisible) {
-//       $('.text2').animate({'opacity':'100'},300);
-//       isVisible = true;
-//   }
-//   if (checkVisible($('#ITEM3'))&&!isVisible3) {
-//     $('.text3').animate({'opacity':'100'},300);
-//     isVisible3 = true;
-//   }
-// });
-
 let opaSpeed=1000;
+let countAnimB=true;
+
 $(window).on('scroll',function() {
   if (checkVisible($('#ITEM2'))) {
     $('.text2').animate({'opacity':'100'},opaSpeed);
+    if(countAnimB===true){
+      countAnimations();
+      countAnimB=false;
+    }  
   }
   if (checkVisible($('#ITEM3'))) {
     $('.text3').animate({'opacity':'100'},opaSpeed);
@@ -183,8 +221,6 @@ $(window).on('scroll',function() {
   }
   if (checkVisible($('#ITEM6'))) {
     $('.text6').animate({'opacity':'100'},opaSpeed);
-    
+    // document.getElementById("ITEM6").className = 'dark';
   }
 });
-
-
